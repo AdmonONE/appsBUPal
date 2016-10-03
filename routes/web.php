@@ -15,13 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['middleware' => ['web']], function(){
+/*Route::group(['middleware' => ['web']], function(){
 	Route::resource('registros', 'RegistroController');
+});*/
+
+Auth::routes();
+
+Route::group(['middleware' => ['web']], function(){
+	Route::resource('home', 'HomeController');
 });
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
