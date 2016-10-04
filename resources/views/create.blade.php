@@ -38,6 +38,8 @@
 	Asunto:<input class="form-control" type="text" name="asunto" value="" placeholder="Asunto">
 	<h5>{{ ($errors->has('asunto')) ? $errors->first('asunto') : '' }} </h5>
 
+	<input class="form-control" type="text" name="usuario" value="{{ Auth::user()->name }}" placeholder="" style="visibility:hidden">
+	
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<input class="btn btn-primary" type="submit" name="name" value="Agregar">
 	<a href="/home" class="btn btn-warning">Regresar</a>

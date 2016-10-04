@@ -62,6 +62,7 @@ class HomeController extends Controller
         $registro->area = $request->area;
         $registro->destinatario = $request->destinatario;
         $registro->asunto = $request->asunto;
+        $registro->usuario = $request->usuario;
         $registro->save();
 
         return redirect('home')->with('message', 'Registro Agregado Correctamente');
@@ -116,6 +117,7 @@ class HomeController extends Controller
                 'area'=>'required',
                 'destinatario'=>'required',
                 'asunto'=>'required',
+                'usuario'=>'required',
             ]);
 
         $registro = Registro::find($id);
@@ -124,6 +126,7 @@ class HomeController extends Controller
         $registro->area = $request->area;
         $registro->destinatario = $request->destinatario;
         $registro->asunto = $request->asunto;
+        $registro->usuario = $request->usuario;
         $registro->save();
 
         return redirect('home')->with('message', 'Registro Actualizado');

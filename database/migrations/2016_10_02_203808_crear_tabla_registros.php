@@ -20,6 +20,7 @@ class CrearTablaRegistros extends Migration
             $table->string('area');
             $table->string('destinatario');
             $table->string('asunto');
+            $table->string('usuario');
             $table->timestamps();
         });
     }
