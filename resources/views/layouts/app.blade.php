@@ -16,6 +16,11 @@
     <link rel="stylesheet" type="text/css" href="/tcal.css" />
     <script type="text/javascript" src="/tcal.js"></script> 
 
+        
+        <link rel="stylesheet" type="text/css" href="/css/style1.css" />
+        <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+    
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([
@@ -37,8 +42,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'HOME') }}
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    HOME
                 </a>
                 
             </div>
@@ -53,8 +58,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}">Iniciar Sesión</a></li>
+                        <li><a href="{{ url('/register') }}">Registrar</a></li>
                     @else
 
                         <a class="navbar-brand" href="/home/create">Nuevo Registro</a>
