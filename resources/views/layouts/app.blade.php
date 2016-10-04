@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="/tcal.css" />
+    <script type="text/javascript" src="/tcal.js"></script> 
+
     <!-- Scripts -->
     <script>
         window.Laravel = <?php echo json_encode([

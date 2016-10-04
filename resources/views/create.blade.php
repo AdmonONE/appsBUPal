@@ -14,24 +14,28 @@
 
 <h2>Nuevo Registro</h2>
 
+<?php
+	$registronuevo = DB::table('registros')->max('numero');
+?>
 
 <form class="col-md-4" action="/home" method="post">
 
-
-	<input class="form-control" type="text" name="numero" value="" placeholder="Numero de Oficio">
+	
+	<input class="form-control" type="text" name="numero" value="<?php echo ($registronuevo+1)?>" placeholder="Numero de Oficio" style="visibility:hidden">
 	<h5>{{ ($errors->has('numero')) ? $errors->first('numero') : '' }} </h5>
 
+	Numero de Oficio: <input type="text" name="date" class="form-control" value="<?php echo ($registronuevo+1)?>" disabled><br>
 
-	<input class="form-control" type="text" name="fecha" value="" placeholder="Fecha">
+	Fecha:<input class="tcal form-control" type="text" name="fecha" value="" placeholder="Fecha" autocomplete="off">
 	<h5>{{ ($errors->has('fecha')) ? $errors->first('fecha') : '' }} </h5>
 
-	<input class="form-control" type="text" name="area" value="" placeholder="Area">
+	Área:<input class="form-control" type="text" name="area" value="" placeholder="Area">
 	<h5>{{ ($errors->has('area')) ? $errors->first('area') : '' }} </h5>
 
-	<input class="form-control" type="text" name="destinatario" value="" placeholder="Destinatario">
+	Destinatario:<input class="form-control" type="text" name="destinatario" value="" placeholder="Destinatario">
 	<h5>{{ ($errors->has('destinatario')) ? $errors->first('destinatario') : '' }} </h5>
 
-	<input class="form-control" type="text" name="asunto" value="" placeholder="Asunto">
+	Asunto:<input class="form-control" type="text" name="asunto" value="" placeholder="Asunto">
 	<h5>{{ ($errors->has('asunto')) ? $errors->first('asunto') : '' }} </h5>
 
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
