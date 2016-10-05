@@ -14,7 +14,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: yellow;
+                background-image: url("/img/FONDO-11 _ 16-9 _ 1366px - 768px.jpg");
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
@@ -64,6 +65,70 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .aintegral {
+                position: absolute;
+                left: 3%;
+                top: 25%;
+            }
+
+            .cultura {
+                position: absolute;
+                left: 25%;
+                top: 25%;
+            }
+
+            .deportes {
+                position: absolute;
+                left: 35%;
+                top: 25%;
+            }
+
+            .gestion {
+                position: absolute;
+                left: 58%;
+                top: 25%;
+            }
+
+            .salud {
+                position: absolute;
+                left: 85%;
+                top: 25%;
+            }
+
+
+.div-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.div-img .img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+}
+.div-img:hover .img {
+  transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+
         </style>
     </head>
     <body>
@@ -76,6 +141,7 @@
             @endif
 
 
+
         <!-- End cssSlider.com -->
 
             <div class="content">
@@ -83,13 +149,27 @@
                     Sistema de Bienestar Universitario - UN Palmira
                 </div>
 
-                <div class="links">
-                    <a href="#">Acompañamiento Integral</a>
+                -<!--<div class="links">-->
+                <div class="aintegral">  <div class="div-img" >    <a href="#"><img class="img" src="/img/aintegral.png" title="" alt="Foto3"></a>  </div></div>
+
+                <div class="cultura">  <div class="div-img" >    <a href="#"><img class="img" src="/img/cultura.png" title="" alt="Foto3"></a>  </div></div>
+
+                <div class="deportes">  <div class="div-img" >    <a href="#"><img class="img" src="/img/deportes.png" title="" alt="Foto3"></a>  </div></div>
+
+                <div class="gestion">  <div class="div-img" >    <a href="#"><img class="img" src="/img/socieconomico.png" title="" alt="Foto3"></a>  </div></div>
+
+                <div class="salud">  <div class="div-img" >    <a href="#"><img class="img" src="/img/salud.png" title="Foto3" alt=""></a>  </div></div>
+
+
+                <!--<a href="#">Actividad Física y Deportiva</a>
                     <a href="#">Cultura</a>
+                    
                     <a href="#">Actividad Física y Deportiva</a>
                     <a href="#">Gestión y Fomento Socioeconómica</a>
                     <a href="#">Salud Estudiantil</a>
-                </div>
+                </div>-->
+
+
                 <br>
                 <br>
                             <div class="csslider1 autoplay ">
