@@ -160,18 +160,20 @@
             </ul>
 
             <div id="cd-login"> <!-- log in form -->
-                <form class="cd-form">
+                <form class="cd-form" method="POST" role="form" action="{{ url('/login') }}">
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
-                        <span class="cd-error-message">Error message here!</span>
+                        <!--<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">-->
+                         <input class="full-width has-padding has-border" id="email" type="email" name="email" placeholder="E-mail">
+                        
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signin-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
+                        <!--<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">-->
+                        <input class="full-width has-padding has-border" id="password" type="password" class="form-control" name="password" required>
                         <a href="#0" class="hide-password">Hide</a>
-                        <span class="cd-error-message">Error message here!</span>
+                        
                     </p>
 
                     <p class="fieldset">
