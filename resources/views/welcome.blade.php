@@ -11,6 +11,8 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/cssslider_files/csss_engine1/style.css">
 
+        <link href="/css/bootstrap.css" rel="stylesheet">
+
         <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
@@ -134,11 +136,30 @@
   border-radius: 10px;
 }
 
+.btn-inisesion {
+    font-weight: bold;
+  color: #fff;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+    padding: 10px 16px;
+  font-size: 14px;
+  line-height: 1.3333333;
+  border-radius: 6px;
+  width: 100%;
+}
+
 
         </style>
     </head>
     <body>
 
+
+<script> 
+function pulsar(e) { 
+  tecla = (document.all) ? e.keyCode :e.which; 
+  return (tecla!=13); 
+} 
+</script> 
 
 <header role="banner">
         <div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>
@@ -146,8 +167,8 @@
         <nav class="main-nav">
             <ul>
                 <!-- inser more links here -->
-                <li><a class="cd-signin" href="#0">Sign in</a></li>
-                <li><a class="cd-signup" href="#0">Sign up</a></li>
+                <li><a class="cd-signin" href="#0">Iniciar Sesión</a></li>
+                <!--<li><a class="cd-signup" href="#0">Sign up</a></li>-->
             </ul>
         </nav>
     </header>
@@ -155,42 +176,49 @@
     <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
         <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
             <ul class="cd-switcher">
-                <li><a href="#0">Sign in</a></li>
-                <li><a href="#0">New account</a></li>
+            @if (Route::has('login'))
+                <li><a href="#0">Iniciar Sesión</a></li>
+                <!--<li><a href="#0">New account</a></li>-->
+            @endif
             </ul>
 
             <div id="cd-login"> <!-- log in form -->
                 <form class="cd-form" method="POST" role="form" action="{{ url('/login') }}">
+                    {{ csrf_field() }}
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signin-email">E-mail</label>
                         <!--<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">-->
-                         <input class="full-width has-padding has-border" id="email" type="email" name="email" placeholder="E-mail">
-                        
+                        <input class="full-width has-padding has-border" id="email" type="email" name="email" value="{{ old('email') }}" placeholder="E-mail" required onkeypress="return pulsar(event)">
+                    
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signin-password">Password</label>
                         <!--<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">-->
-                        <input class="full-width has-padding has-border" id="password" type="password" class="form-control" name="password" required>
+                        <input class="full-width has-padding has-border" id="password" type="password" name="password" placeholder="Contraseña" required onkeypress="return pulsar(event)">
                         <a href="#0" class="hide-password">Hide</a>
                         
                     </p>
 
                     <p class="fieldset">
                         <input type="checkbox" id="remember-me" checked>
-                        <label for="remember-me">Remember me</label>
+                        <label for="remember-me">Recordar mis datos</label>
                     </p>
 
                     <p class="fieldset">
-                        <input class="full-width" type="submit" value="Login">
+                        <button class="btn-inisesion" type="submit">
+                                    Ingresar
+                        </button>
                     </p>
+
+                    <p class=""><a href="#0">¿Olvidó su contraseña?</a></p>
                 </form>
                 
-                <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+                
                 <!-- <a href="#0" class="cd-close-form">Close</a> -->
             </div> <!-- cd-login -->
 
-            <div id="cd-signup"> <!-- sign up form -->
+            <!--<div id="cd-signup"> sign up form 
                 <form class="cd-form">
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">Username</label>
@@ -221,8 +249,8 @@
                     </p>
                 </form>
 
-                <!-- <a href="#0" class="cd-close-form">Close</a> -->
-            </div> <!-- cd-signup -->
+                 <a href="#0" class="cd-close-form">Close</a> 
+            </div> cd-signup -->
 
             <div id="cd-reset-password"> <!-- reset password form -->
                 <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
@@ -247,13 +275,14 @@
 
 
 
-        <div class="flex-center position-ref full-height">
+        <!--<div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     <a href="{{ url('/login') }}">Iniciar Sesión</a>
                     <a href="{{ url('/register') }}">Registrar</a>
                 </div>
             @endif
+        -->
 
 
 
