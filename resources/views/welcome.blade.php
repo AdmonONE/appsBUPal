@@ -287,6 +287,8 @@ function pulsar(e) {
 
 
         <!-- End cssSlider.com -->
+<br>
+<br>
 
             <div class="content">
                 <div class="title m-b-md">
