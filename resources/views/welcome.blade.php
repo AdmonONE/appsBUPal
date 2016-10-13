@@ -139,13 +139,18 @@
 .btn-inisesion {
     font-weight: bold;
   color: #fff;
-  background-color: #337ab7;
-  border-color: #2e6da4;
+  background-color: #058aa9;
+  border-color: white;
     padding: 10px 16px;
   font-size: 14px;
   line-height: 1.3333333;
   border-radius: 6px;
   width: 100%;
+}
+
+.main-nav .cd-signin{
+    background-color: #058aa9;
+    font-weight: bold;
 }
 
 
@@ -162,7 +167,7 @@ function pulsar(e) {
 </script> 
 
 <header role="banner">
-        <div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>
+        <!--<div id="cd-logo"><a href="#0"><img src="img/cd-logo.svg" alt="Logo"></a></div>-->
 
         <nav class="main-nav">
             <ul>
@@ -177,7 +182,8 @@ function pulsar(e) {
         <div class="cd-user-modal-container"> <!-- this is the container wrapper -->
             <ul class="cd-switcher">
             @if (Route::has('login'))
-                <li><a href="#0">Iniciar Sesión</a></li>
+            
+                <!--<li><a href="#0">Iniciar Sesión</a></li>-->
                 <!--<li><a href="#0">New account</a></li>-->
             @endif
             </ul>
