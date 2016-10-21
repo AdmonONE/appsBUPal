@@ -14,9 +14,13 @@
 
 <h2>Nuevo Registro</h2>
 
+
 <?php
 	$registronuevo = DB::table('registros')->max('numero');
 ?>
+
+
+
 
 <form class="col-md-4" action="/home" method="post">
 
@@ -29,8 +33,7 @@
 	Fecha:<input class="tcal form-control" type="text" name="fecha" value="" placeholder="Fecha" autocomplete="off">
 	<h5>{{ ($errors->has('fecha')) ? $errors->first('fecha') : '' }} </h5>
 
-	Área:<input class="form-control" type="text" name="area" value="" placeholder="Area">
-	<h5>{{ ($errors->has('area')) ? $errors->first('area') : '' }} </h5>
+	Área:<input class="form-control" type="text" name="" value="{{ Auth::user()->area }} " disabled><br>
 
 	Destinatario:<input class="form-control" type="text" name="destinatario" value="" placeholder="Destinatario">
 	<h5>{{ ($errors->has('destinatario')) ? $errors->first('destinatario') : '' }} </h5>
@@ -43,6 +46,9 @@
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<input class="btn btn-primary" type="submit" name="name" value="Agregar">
 	<a href="/home" class="btn btn-warning">Regresar</a>
+
+	<input class="form-control" type="text" name="area" value="{{ Auth::user()->area }} " placeholder="Area" style="visibility:hidden">
+	<h5>{{ ($errors->has('area')) ? $errors->first('area') : '' }} </h5>
 </form>
 
 @stop

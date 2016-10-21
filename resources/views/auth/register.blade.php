@@ -24,6 +24,22 @@
                             </div>
                         </div>
 
+
+                        <div class="form-group{{ $errors->has('area') ? ' has-error' : '' }}">
+                            <label for="area" class="col-md-4 control-label">Area</label>
+
+                            <div class="col-md-6">
+                                <input id="area" type="text" class="form-control" name="area" value="{{ old('area') }}" required autofocus>
+
+                                @if ($errors->has('area'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('area') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 

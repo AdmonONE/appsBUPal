@@ -62,6 +62,7 @@
                         <li><a href="{{ url('/register') }}">Registrar</a></li>
                     @else
 
+                    
                         <a class="navbar-brand" href="/home/create">Nuevo Registro</a>
 
                         <li class="dropdown">
