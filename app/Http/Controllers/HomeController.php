@@ -65,6 +65,8 @@ class HomeController extends Controller
         $registro->usuario = $request->usuario;
         $registro->save();
 
+        
+
         return redirect('home')->with('message', 'Registro Agregado Correctamente');
     }
 
